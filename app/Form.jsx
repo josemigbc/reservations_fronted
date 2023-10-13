@@ -13,7 +13,7 @@ const PlaceInput = ({ name, data, setData }) => {
             >
                 <option>---------------</option>
                 {
-                    config.locations.map(loc => <option value={loc}>{loc}</option>)
+                    config.locations.map(loc => <option key={loc} value={loc}>{loc}</option>)
                 }
             </select>
         </div>

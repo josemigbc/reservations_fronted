@@ -70,7 +70,7 @@ export default class BackendConsumer {
                 refresh: this.auth.refreshToken
             })
         })
-        if (response.status === '200'){
+        if (response.status === 200){
             const data = await response.json()
             this.setAuth(this.auth.refreshToken, data.access)
             return data.access

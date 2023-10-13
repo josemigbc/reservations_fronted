@@ -5,6 +5,7 @@ import BackendConsumer from '@/consumer';
 import { useAuth } from '../profile/useAuth';
 import ErrorContext from '../ErrorContext';
 import {useContext} from "react"
+import { useRouter } from 'next/navigation';
 
 
 export default function Page() {
@@ -15,6 +16,7 @@ export default function Page() {
     const [auth,setAuth] = useAuth()
     const consumer = new BackendConsumer(auth,setAuth)
     const setErrors = useContext(ErrorContext)
+    const router = useRouter()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -37,6 +39,7 @@ export default function Page() {
                 setErrors('Error')
             } else {
                 setErrors('Payed')
+                router.push("/")
             }
 
         } catch (error) {

@@ -14,7 +14,7 @@ export default function Passengers({auth, setAuth}){
         <section >
             <div>
                 {data && data.length > 0 ? data.map(pass => (
-                    <div className="shadow-md py-2 px-4 rounded-md bg-blue-200 mt-5">
+                    <div key={pass.id} className="shadow-md py-2 px-4 rounded-md bg-blue-200 mt-5">
                         <div className="font-bold text-lg text-slate-700 border-b-2 border-slate-800">
                             <h3>Passenger</h3>
                         </div>

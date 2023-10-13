@@ -4,7 +4,6 @@ import Profile from "./Profile";
 import { useAuth } from "./useAuth";
 
 export default function Page(){
-
     const [auth, setAuth] = useAuth()
 
     if (auth.isAuthenticated()){

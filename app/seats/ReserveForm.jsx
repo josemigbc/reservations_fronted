@@ -97,7 +97,7 @@ export default function ReserveForm({ seat }) {
                         <option>---------</option>
                         {passengers &&
                             passengers.map(pass => (
-                                <option value={pass.id}>{pass.full_name}</option>
+                                <option key={pass.id} value={pass.id}>{pass.full_name}</option>
                             ))
                         }
                     </select>

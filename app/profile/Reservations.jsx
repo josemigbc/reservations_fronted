@@ -1,5 +1,6 @@
 import BackendConsumer from '@/consumer'
 import {useState, useEffect} from 'react'
+
 export default function Reservations({auth, setAuth}){
 
     const [data, setData] = useState(null)
@@ -12,7 +13,7 @@ export default function Reservations({auth, setAuth}){
         <section>
             <div>
                 {data && data.length > 0 ? data.map(res => (
-                    <div className="shadow-md py-2 px-4 rounded-md bg-blue-200 mt-5">
+                    <div key={res.id} className="shadow-md py-2 px-4 rounded-md bg-blue-200 mt-5">
                         <p className="font-semibold text-lg border-b-2 border-slate-800">
                             {`${res.seat.trip.origin} - ${res.seat.trip.destination}`}
                         </p>
