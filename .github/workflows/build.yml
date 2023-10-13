@@ -1,4 +1,4 @@
-name: Deploy Next.js site to Pages
+name: Deploy Next.js site.
 
 on:
   # Runs on pushes targeting the default branch
@@ -13,10 +13,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: "18.17.1"
-          cache: 'npm'
+        run: |
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          nvm install 18
+          nvm use 18
+        env:
+          NODE_OPTIONS: "--without-node"
+
       - name: Install dependencies
         run: npm install
       - name: Build with Next.js
