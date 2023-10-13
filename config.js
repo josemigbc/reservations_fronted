@@ -1,5 +1,5 @@
 module.exports = {
-    BASE_URL: "http://127.0.0.1:8000",
+    BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
     locations: [
         "A",
         "B",
@@ -17,5 +17,5 @@ module.exports = {
         "Holguin"
     ],
     STRIPE_PUBLIC_KEY: "pk_test_51NnSDsIUYmWZzKQwoN5nMYF70xBIhTUHMViH31RH21cqh7P7iZMFRpjtF0GPICLaAkQjhLzOdSKhNk6j6RJVbgPF00ZTRTTu7Z",
-    GOOGLE_AUTH_URL: "http://127.0.0.1:8000/auth/google/"
+    GOOGLE_AUTH_URL: process.env.NEXT_PUBLIC_GOOGLE_AUTH_URL
 }

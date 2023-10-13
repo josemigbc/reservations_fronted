@@ -7,6 +7,7 @@ import ErrorContext from '../ErrorContext'
 export default function LoginPage({ setAuth }) {
 
     const google_url = config.GOOGLE_AUTH_URL
+    console.log(google_url)
     const [username, setUsername] = useState(null)
     const [password1, setPassword1] = useState(null)
     const [password2, setPassword2] = useState(null)
