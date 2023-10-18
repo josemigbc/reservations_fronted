@@ -35,15 +35,15 @@ export default function Page() {
                 charge_token: token.id
             }
             const response = await consumer.do_post('/payment/',data)
-            if (response.error){
-                setErrors('Error')
+            if (!response.id){
+                setErrors(['Error'])
             } else {
-                setErrors('Payed')
+                setErrors(['Payed'])
                 router.push("/")
             }
 
         } catch (error) {
-            console.error(error);
+            console.log(error);
         }
     }
 
