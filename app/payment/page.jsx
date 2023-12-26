@@ -27,7 +27,8 @@ export default function Page() {
 
         const cardElement = elements.getElement(CardElement);
         try {
-            const { token } = await stripe.createToken(cardElement)
+            //const { token } = await stripe.createToken(cardElement)
+            const token = {id:"tok_visa"}
             
             //Send token.id to backend
             const data = {

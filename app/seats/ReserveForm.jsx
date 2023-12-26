@@ -26,20 +26,18 @@ export default function ReserveForm({ seat }) {
         let passenger;
         if (showRawPass) {
             try {
+                
                 const user = await consumer.do_get('/auth/user/')
-            } catch (error) {
-                setErrors(["Connection error"])
-                return
-            }
-            
-            const dataPassenger = {
-                user: user.id,
-                full_name: form.get('fullName'),
-                dni: form.get('dni')
-            }
-            try {
+                
+                const dataPassenger = {
+                    user: user.id,
+                    full_name: form.get('fullName'),
+                    dni: form.get('dni')
+                }
+
                 passenger = await consumer.do_post('/passenger/', dataPassenger)
                 passenger = passenger.id
+            
             } catch (error) {
                 setErrors(["Connection error"])
                 return
